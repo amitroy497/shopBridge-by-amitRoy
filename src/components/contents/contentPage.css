@@ -1,0 +1,48 @@
+.contentsWrapper {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+}
+.contentsSection {
+  height: calc(100vh - 130px);
+  width: 80%;
+  position: absolute;
+  top: 100px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.contents-table {
+  margin: 0 auto;
+  width: 65%;
+  padding: 10px;
+  border-width: 5px;
+  border-style: dotted solid double dashed;
+  border-color: #fff;
+}
+.contents-table thead {
+  font-weight: bold;
+}
+.contents-table td {
+  padding: 15px;
+  border: 1px dashed #fff;
+  width: 70%;
+}
+.contents-table tr td:first-child,
+.contents-table tr td:last-child {
+  text-align: center;
+  width: 12%;
+}
+
+.contents-table tr td a {
+  color: #fff;
+}
+.contents-table tr td a:hover {
+  color: red;
+}
+.contents-table tr:nth-child(even):hover {
+  background: #565555;
+}

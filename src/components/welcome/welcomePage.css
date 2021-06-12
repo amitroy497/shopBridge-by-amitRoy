@@ -1,0 +1,86 @@
+.welcomeWrapper {
+  text-align: center;
+  height: calc(100vh - 100px);
+  position: relative;
+  margin: 50px auto;
+  width: 80%;
+}
+.goToNextPage {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
+.welcomeWrapper .next {
+  padding: 5px 20px 5px 5px;
+  border: 1px solid #000;
+  display: flex;
+  width: 20px;
+  margin-left: 15px;
+  background: #000;
+  box-sizing: content-box;
+}
+.MuiSvgIcon-root.welcomeNextIcon {
+  color: #fff;
+  font-size: 35px;
+}
+.welcomeWrapper h1 {
+  width: 150px;
+  height: 50px;
+  margin: 20px 0;
+  border-radius: 25px;
+  position: relative;
+  animation-name: welcomeAnim;
+  animation-duration: 5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-title {
+  animation-timing-function: linear;
+}
+.to-title {
+  animation-timing-function: ease;
+}
+.shop-title {
+  animation-timing-function: ease-in;
+}
+.bridge-title {
+  animation-timing-function: ease-out;
+}
+
+@keyframes welcomeAnim {
+  0% {
+    background: red;
+    left: 0;
+    top: 0;
+  }
+  25% {
+    background: yellow;
+    right: 0;
+    top: 0;
+  }
+  50% {
+    background: blue;
+    left: 80%;
+    top: 200px;
+  }
+  75% {
+    background: green;
+    left: 0;
+    top: 200px;
+  }
+  100% {
+    background: red;
+    left: 0;
+    top: 0;
+  }
+}

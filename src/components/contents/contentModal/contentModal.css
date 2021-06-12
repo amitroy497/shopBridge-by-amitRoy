@@ -1,0 +1,56 @@
+.modalPopUp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 10px;
+  z-index: 9999;
+  width: 800px;
+  height: 500px;
+}
+.overlayPopUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+.closeModalPopUp {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.modalPopUp .contents-table {
+  width: 100%;
+  border-color: #000;
+}
+.modalPopUp .contents-table td {
+  border: 1px dashed #000;
+}
+.modalPopUp .contents-table tr:nth-child(even):hover {
+  background: #dedede;
+}
+.modalPopUp .contents-table tr td a {
+  color: blue;
+}
+.modalPopUp .contents-table tr td a:hover {
+  color: red;
+}
+.MuiSvgIcon-root.contentMenu {
+  position: fixed;
+  color: #fff;
+  top: 30px;
+  right: 30px;
+  font-size: 35px;
+  text-decoration: none;
+  display: flex;
+  z-index: 2;
+  cursor: pointer;
+}
+.MuiSvgIcon-root.contentMenu:hover {
+  color: red;
+}

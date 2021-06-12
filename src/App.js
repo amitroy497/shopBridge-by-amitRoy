@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
+import WelcomePage from './components/welcome/welcomePage'
+import ContentPage from './components/contents/contentPage'
+import DisplayInventory from './components/displayInventory/displayInventory'
+import AddInventory from './components/addInventory/addInventory'
+import UpdateInventory from './components/updateInventory/updateInventory'
 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 function App() {
+  const [data, setData] = useState()
+
+  const selectInventory = (inv) => {
+    setData(inv)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <Switch>
+          <Route path='/' exact={true}>
+            <WelcomePage />
+          </Route>
+          <Route path='/contents'>
+            <ContentPage />
+          </Route>
+          <Route path='/inventory'>
+            <DisplayInventory selectInventory={selectInventory} />
+          </Route>
+          <Route path='/add'>
+            <AddInventory />
+          </Route>
+          <Route path='/update/:id/:name'>
+            <UpdateInventory data={data} />
+          </Route>
+        </Switch>
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
