@@ -134,3 +134,17 @@
   width: 100px;
   height: 100px;
 }
+.emptyInventory {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  color: yellow;
+  font-size: 25px;
+  font-weight: bold;
+}
+.clickHere {
+  position: fixed;
+  top: -35px;
+  right: 40px;
+}

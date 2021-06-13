@@ -1,34 +1,3 @@
 {
-  "inventory": [
-    {
-      "id": 1,
-      "name": "Test1",
-      "description": "Bruce",
-      "price": "bat@test.com"
-    },
-    {
-      "id": 2,
-      "name": "Test2",
-      "description": "Bruce",
-      "price": "bat@test.com"
-    },
-    {
-      "id": 3,
-      "name": "Test3",
-      "description": "Bruce",
-      "price": "bat@test.com"
-    },
-    {
-      "id": 4,
-      "name": "Test4",
-      "description": "Bruce",
-      "price": "bat@test.com"
-    },
-    {
-      "id": 5,
-      "name": "Test5",
-      "description": "Bruce",
-      "price": "bat@test.com"
-    }
-  ]
+  "inventory": []
 }

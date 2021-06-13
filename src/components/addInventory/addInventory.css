@@ -32,7 +32,6 @@
 .addInventorySection form::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
-
 .addInventorySection form div {
   flex: 100%;
   display: flex;

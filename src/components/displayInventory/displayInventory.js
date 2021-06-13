@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import './displayInventory.css'
 import loading from './../../assets/images/loading.gif'
 import ReactPaginate from 'react-paginate'
-
 import { Link } from 'react-router-dom'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined'
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined'
 import AddCircleRoundedIcon from '@material-ui/icons/AddCircleRounded'
+import ClickHere from './../../assets/images/ClickHere.gif'
 
 const url = `http://localhost:3004/inventory`
 
@@ -48,7 +48,7 @@ const DisplayInventory = (props) => {
           <td className='displayPrice'>{item.price}</td>
           <td className='displayModify'>
             <Link
-              to={`/update/${item.id}/${item.name}`}
+              to={`/update/${item.id}/${item.name}/${item.desc}/${item.price}`}
               onClick={() => {
                 props.selectInventory(item)
               }}
@@ -81,20 +81,20 @@ const DisplayInventory = (props) => {
       </Link>
       <div className='display-title'>Inventory</div>
       <div className='displaySection'>
-        <table className='display-table'>
-          <thead>
-            <tr>
-              <td className='displayItems'>Item No.</td>
-              <td className='displayName'>Name</td>
-              <td className='displayDescription'>Description</td>
-              <td className='displayPrice'>Price</td>
-              <td className='displayModify'>Modify</td>
-              <td className='displayDelete'>Delete</td>
-            </tr>
-          </thead>
-          <tbody>
-            {!isLoading ? (
-              <>
+        {inventory.length ? (
+          !isLoading ? (
+            <table className='display-table'>
+              <thead>
+                <tr>
+                  <td className='displayItems'>Item No.</td>
+                  <td className='displayName'>Name</td>
+                  <td className='displayDescription'>Description</td>
+                  <td className='displayPrice'>Price</td>
+                  <td className='displayModify'>Modify</td>
+                  <td className='displayDelete'>Delete</td>
+                </tr>
+              </thead>
+              <tbody>
                 {showInventory}{' '}
                 <ReactPaginate
                   previousLabel={'Previous'}
@@ -107,14 +107,21 @@ const DisplayInventory = (props) => {
                   disabledClassName={'paginationDisabled'}
                   activeClassName={'paginationActive'}
                 />{' '}
-              </>
-            ) : (
-              <div className='loadingIcon'>
-                <img src={loading} alt='loading' />
-              </div>
-            )}
-          </tbody>
-        </table>
+              </tbody>
+            </table>
+          ) : (
+            <div className='loadingIcon'>
+              <img src={loading} alt='loading' />
+            </div>
+          )
+        ) : (
+          <>
+            <div className='emptyInventory'>
+              Inventory is empty, please add something...
+            </div>
+            <img src={ClickHere} alt='click here' className='clickHere' />
+          </>
+        )}
       </div>
       <Link to='/add' className='displayAdd' title='Add new inventory'>
         <AddCircleRoundedIcon />
